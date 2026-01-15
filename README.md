@@ -1,3 +1,6 @@
+# Wiki
+https://docs.utnso.com.ar/guias/
+
 Simulacion del funcionamiento de un sistema operativo. Parte practica de la asignatura "sistemas operativos"  de la UTN FRBA 1C 2024.
 Este protecto esta desarrollado en C y esta dividido principalmente en 4 modulos:
 1- Kernel
