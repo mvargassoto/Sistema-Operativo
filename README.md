@@ -20,6 +20,22 @@ El sistema operativo presenta las siguiente caracteristicas:
 * Desarrollo de interfaces input y output
 * Desarollo de interfaz generica : retardo de tiempo unicamente
 
+## Instalacion (Linux)
+Primero descargar e instalar [so-commons-library]:
+- descargar el repositorio
+- ejecutar:
+```
+make debug
+make install
+```
+Instalar dependencias básicas
+```
+apt install build-essential
+apt install libreadline-dev
+```
+Configurar IPs y puertos
+- En cada modulo vas a tener que indicar a que IP se va a conenctar el mismo y en que puerto, procura asegurar la consistencia para que haya una conexión
+
 # Sistemas Operativos UTN FRBA
 En la materia se abordan los siguientes temas:
 1. **Arquitectura y Fundamentos de Hardware**
