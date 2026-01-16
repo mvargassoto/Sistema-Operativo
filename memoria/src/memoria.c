@@ -98,7 +98,7 @@ void conectar()
 
 void levantar_logger()
 {
-	logger_memoria = log_create("memoria.log", "MEMORIA", false, LOG_LEVEL_INFO);
+	logger_memoria = log_create("memoria.log", "MEMORIA", true, LOG_LEVEL_INFO);
 	if (!logger_memoria)
 	{
 		perror("Error al iniciar logger de memoria\n");
@@ -118,9 +118,9 @@ void levantar_config()
 
 void conectar_kernel()
 {
-	//log_info(logger_memoria, "Esperando Kernel....");
+	log_info(logger_memoria, "Esperando Kernel....");
 	socket_kernel = esperar_cliente(socket_servidor, logger_memoria);
-	//log_info(logger_memoria, "Se conecto Kernel");
+	log_info(logger_memoria, "Se conecto Kernel");
 
 	int err = pthread_create(&hilo_kernel, NULL, (void *)atender_kernel, NULL);
 	if (err != 0)
@@ -144,9 +144,9 @@ void conectar_io(pthread_t *hilo_io, int *socket_io)
 
 void conectar_cpu()
 {
-	//log_info(logger_memoria, "Esperando Cpu....");
+	log_info(logger_memoria, "Esperando Cpu....");
 	socket_cpu = esperar_cliente(socket_servidor, logger_memoria);
-	//log_info(logger_memoria, "Se conecto Cpu");
+	log_info(logger_memoria, "Se conecto Cpu");
 
 	// tiene que enviar al CPU el tamanio de pagina para que tenga con que laburar la MMU
 	t_buffer *buffer = crear_buffer();
