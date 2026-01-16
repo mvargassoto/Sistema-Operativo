@@ -63,7 +63,7 @@ void inicializar_modulo(){
 }
 
 void levantar_logger(){
-	logger_cpu = log_create("cpu_log.log", "CPU",false, LOG_LEVEL_INFO);
+	logger_cpu = log_create("cpu_log.log", "CPU",true, LOG_LEVEL_INFO);
 	if (!logger_cpu) {
 		perror("Error al iniciar logger de cpu\n");
 		exit(EXIT_FAILURE);
