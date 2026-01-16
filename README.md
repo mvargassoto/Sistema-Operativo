@@ -7,7 +7,7 @@ Este protecto esta desarrollado en C y esta dividido en 5 actores principales:
 5. FILE SYSTEM
 
 El sistema operativo presenta las siguiente caracteristicas:
-* Diagrama de 5 estaods : New - Ready - Exec - Blocked - Exit
+* Diagrama de 5 estados : New - Ready - Exec - Blocked - Exit
 * Algoritmos del planificador de corto plazo: FIFO - Round Robin - Virtul Round Robin
 * Consola interactiva en Kernel: EJECUTAR_SCRIPT -INICIAR_PROCESO -FINALIZAR_PROCESO , etc.
 * Ciclo de instruccion : Fetch -Decode -Execute
@@ -21,6 +21,37 @@ El sistema operativo presenta las siguiente caracteristicas:
 * Desarollo de interfaz generica : retardo de tiempo unicamente
 
 # Sistemas Operativos UTN FRBA
+En la materia se abordan los siguientes temas:
+1. **Arquitectura y Fundamentos de Hardware**
+    - Ciclo de Instrucción: Se estudia cómo la CPU busca, decodifica y ejecuta instrucciones de forma cíclica.
+    - Registros: Uso de registros específicos como el PC (puntero de instrucción), el IR (instrucción actual) y el PSW (estado del procesador).
+    - Interrupciones: Mecanismos para que el hardware o el software soliciten atención inmediata del procesador.
+
+2. **El Sistema Operativo como Interfaz**
+    - Modos de Ejecución: Diferencia entre el Modo Usuario (restringido para aplicaciones) y Modo Kernel (privilegiado para el SO) para proteger el hardware.
+    - Llamadas al Sistema (Syscalls): Son las funciones que permiten a los programas pedirle servicios directamente al Kernel.
+    - Estructura del SO: Modelos de diseño como sistemas monohilo, multihilo y arquitecturas de micro-núcleo.
+
+3. **Gestión de Procesos e Hilos**
+    - Procesos: Un programa en ejecución que incluye su propio espacio de memoria dividido en Código, Datos, Stack y Heap.
+    - PCB (Bloque de Control de Proceso): Estructura de datos donde el SO guarda toda la información necesaria para administrar un proceso.
+    - Planificación (Scheduling): Algoritmos (como FIFO, Round Robin o Prioridades) que deciden qué proceso usa la CPU en cada momento.
+
+4. **Administración de Memoria**
+    - Memoria Virtual: Técnica que permite ejecutar procesos más grandes que la RAM física disponible.
+    - Paginación y Segmentación: Métodos para dividir y organizar la memoria de manera eficiente para evitar la fragmentación.
+    - Algoritmos de Reemplazo: Estrategias para decidir qué página quitar de la RAM cuando está llena (ej: FIFO, Reloj, LRU).
+
+5. **Sistemas de Archivos y Entrada/Salida**
+    - Archivos y Directorios: Cómo se organiza la información lógicamente en el disco.
+    - Implementaciones: Comparativa entre sistemas como NTFS (Windows) y el uso de i-nodos en Linux.
+    - RAID: Agrupamiento de discos rígidos para mejorar la velocidad o la seguridad de los datos (Niveles 0, 1, 5).
+    - Gestión de I/O: Técnicas de comunicación con periféricos, como polling o acceso directo a memoria.
+
+6. **Seguridad y Administración Práctica**
+    - Amenazas y Protección: Tipos de software malicioso (virus, intrusos) y cómo el SO protege los recursos.
+    - Shell Scripting: Automatización de tareas en Linux mediante comandos y estructuras de control (if, for, while).
+    - Usuarios y Permisos: Gestión de accesos y grupos para mantener la integridad del sistema.
 
 ## Links e info util de Práctica
 ENUNCIADO: https://docs.google.com/document/d/1-AqFTroovEMcA1BfC2rriB5jsLE6SUa4mbcAox1rPec/edit
