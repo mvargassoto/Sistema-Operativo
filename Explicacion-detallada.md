@@ -39,53 +39,74 @@ Los posibles planificadores son:
 - **Round Robin**: los procesos entran por al igual que en FIFO en la CPU pero con un limite de tiempo para procesarse (quantum)
 - **Virtual Round Robin**: igual que RR pero ahora existe una cola prioritaria READY+ de la cual se toman primero a los procesos que se encuentran en ella, a esta solo acceden los procesos que salen de CPU por llamada a I/O
 
+### Logs que se registran
+- Creacion de Proceso
+- Fin de Proceso
+- Cambio de Estado
+- Motivo de Bloqueo
+- Fin de Quantum
+- Ingreso a READY
+
+### Archivo de configuración
+- **PUERTO_CPU_DISPATCH**= puerto de escucha para recibir y desalojar procesos
+- **PUERTO_CPU_INTERRUPT**= puerto de escucha para interrumpir procesos
+- **MULTIPROGRAMACION_MAX**= grado de multiprogramacion 
+- **PUERTO_MEM**= puerto de escucha para modulo Memoria
+- **PUERTO_ESCUCHA**= puerto donde Kernel escucha peticiones 
+- **INSTANCIAS_RECURSOS**= [n1, n2, ... , nn]
+- **RECURSOS**= [nombreRecurso1, nombreRecurso2, ... ,nombreRecursoN]
+- **QUANTUM**= tiempo maximo que tendra cada proceso en la CPU
+- **IP_CPU**= IP de la maquina en donde se encuentre CPU
+- **ALGORITMO**= algoritmo de planificacion de corto plazo (FIFO,RR,VRR)
+- **IP_MEMORIA**= IP de la maquina en donde se encuentre MEMORIA  
+- **IP**= IP de la maquina en donde se encuenntra KERNEL
+- **RUTA_LOCAL**=/home/-path hasta la raiz del repo-/kernel
+
+## Modulo Interfaces 
+Las interfaces son una simulacion de las que conocemos en la vida real: teclado, monitor, mouse, impresora... 
+
+En nuestro caso vamos a simular puntalmente dos: TECLADO y MONITOR. Como dijimos antes, estas interfaces van a recibir peticiones de procesos, y la politica de uso va a ser: si esta ocupada con un proceso A, entonces el proceso solicitante B debe bloquearse hasta que la I/O le avise a Kernel que esta libre. La cantidad de interfaces NO tiene limite.
+
+### Archivo de configuración
+Hay de momento 4 posibles modulos I/O
+
+**I/O GENERICA SLEEP**
+
+Esta interfaz lo unico que hace es "dormir" al proceso unna cantidad de tiempo (TIEMPO_UNIDAD_TRABAJO), entonces su unica instruccion posible es:
+- IO_GEN_SLEEP
 
 
-### Modulo CPU
-linnea
+Al leer el archivo de configuración solo le van a importar las propiedades de:
+- TIPO_INTERFAZ= GENERICA
+- TIEMPO_UNIDAD_TRABAJO= cuanto tiempo en ms se va a quedar el proceso esperando
+- IP_KERNEL= IP de la maquina donde se encuentre KERNEL
+- PUERTO_KERNEL= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
 
-linnea
+**STDIN**
 
-linnea
-
-
-linnea
-
-linnea
-
-linnea
-
-linnea
+Esta interfaz no tiene unidad de trabajo ya que lo que hace es esperar que el usuario ingrese algo por teclado. Lo ingresado sera guardado en la direccion fisica indicada en la peticion de Kernel. La unica instruccion posible es:
+- IO_STDIN_READ
 
 
-linnea
+Al leer el archivo de configuración solo le van a importar las propiedades de:
+- TIPO_INTERFAZ= STDIN
+- IP_KERNEL= IP de la maquina donde se encuentre KERNEL
+- PUERTO_KERNEL= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- IP_MEMORIA= IP de la maquina donde se encuentre MEMORIA
+- PUERTO_MEMORIA= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
 
-linnea
+**STDOUT**
 
-linnea
+Las interfaces STDOUT se conectan a memoria para leer el valor que se encuentra en la o las direcciones físicas pedidas y mostrar el resultado por pantalla. La unica instruccion posible es:
+- IO_STDOUT_WRITE
+
+- TIPO_INTERFAZ= STDOUT
+- IP_KERNEL= IP de la maquina donde se encuentre KERNEL
+- PUERTO_KERNEL= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- IP_MEMORIA= IP de la maquina donde se encuentre MEMORIA
+- PUERTO_MEMORIA= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
 
 
-linnea
+**DialFS**
+## Modulo CPU
 
-linnea
-
-linnea
-
-
-linnea
-linnea
-linnea
-linnea
-linnea
-linnea
-linnea
-linnea
-linnea
-linnealinnea
-linnea
-linnea
-linnea
-linnea
-linnea
-linnea
-### Modulo Interfaces 
