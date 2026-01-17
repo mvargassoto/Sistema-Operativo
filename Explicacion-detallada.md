@@ -4,7 +4,7 @@ El mismo consta de **4 módulos**
 - **Kernel**
 - **Cpu**
 - **Memoria**
-- **I/O**: en este ultimo se incluye la logica de File System
+- **[I/O](#modulo-interfaces)**: en este ultimo se incluye la logica de File System
 
 ## Modulo Kernel
 Este modulo es el orquestador, es quien dirige el funcionamiento de los 3 modulos restantes. En el encontramos responsabilidades como:
