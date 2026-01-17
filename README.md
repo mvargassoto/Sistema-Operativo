@@ -6,19 +6,7 @@ Este protecto esta desarrollado en C y esta dividido en 5 actores principales:
 4. I/O
 5. FILE SYSTEM
 
-El sistema operativo presenta las siguiente caracteristicas:
-* Diagrama de 5 estados : New - Ready - Exec - Blocked - Exit
-* Algoritmos del planificador de corto plazo: FIFO - Round Robin - Virtul Round Robin
-* Consola interactiva en Kernel: EJECUTAR_SCRIPT -INICIAR_PROCESO -FINALIZAR_PROCESO , etc.
-* Ciclo de instruccion : Fetch -Decode -Execute
-* Instrucciones en codigo Asembler y registro de CPU : SET - MOV_IN - MOV_OUT - SUM- SUB -WAIT - SIGNAL ,AX , BX , EAX, EBX , etc..
-* Desarrollo de MMU
-* Implementacion de TLB con algoritmos : FIFO - LRU
-* Esquema de paginacion simple (contigua) : tabla de paginas 
-* Desarrollo de File System: Creacion de Metadata por archivo regular - tabla de procesos abiertos - archivo para el contenido de los archivos creados (bloque.dat) - creacion de bitmap- compactacion de archivos
-* Asignacion de bloques contiguo 
-* Desarrollo de interfaces input y output
-* Desarollo de interfaz generica : retardo de tiempo unicamente
+**Si querés saber en detalle de que trata ingresá** [acá](https://github.com/mvargassoto/Sistema-Operativo/blob/main/Explicacion-detallada.md)
 
 ## Instalacion (Linux)
 Primero descargar e instalar [so-commons-library]:
