@@ -1,12 +1,8 @@
-Simulacion del funcionamiento de un sistema operativo. Parte practica de la asignatura "sistemas operativos"  de la UTN FRBA 1C 2024.
-Este protecto esta desarrollado en C y esta dividido en 5 actores principales:
-1. KERNEL
-2. CPU
-3. MEMORIA
-4. I/O
-5. FILE SYSTEM
+Simulacion del funcionamiento de un sistema operativo.
 
-**Si querés saber en detalle de que trata ingresá** [acá](https://github.com/mvargassoto/Sistema-Operativo/blob/main/Explicacion-detallada.md)
+Trabajo práctico de la materia Sistemas Operativos de la Universidad Tecnológica Nacional.
+
+**Si querés saber en detalle de qué trata ingresá** [acá](https://github.com/mvargassoto/Sistema-Operativo/blob/main/Explicacion-detallada.md)
 
 ## Instalacion (Linux)
 Primero descargar e instalar [so-commons-library]:
