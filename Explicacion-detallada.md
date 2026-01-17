@@ -77,10 +77,10 @@ Esta interfaz lo unico que hace es "dormir" al proceso unna cantidad de tiempo (
 
 
 Al leer el archivo de configuración solo le van a importar las propiedades de:
-- TIPO_INTERFAZ= GENERICA
-- TIEMPO_UNIDAD_TRABAJO= cuanto tiempo en ms se va a quedar el proceso esperando
-- IP_KERNEL= IP de la maquina donde se encuentre KERNEL
-- PUERTO_KERNEL= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- **TIPO_INTERFAZ**= GENERICA
+- **TIEMPO_UNIDAD_TRABAJO**= cuanto tiempo en ms se va a quedar el proceso esperando
+- **IP_KERNEL**= IP de la maquina donde se encuentre KERNEL
+- **PUERTO_KERNEL**= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
 
 **STDIN**
 
@@ -89,22 +89,22 @@ Esta interfaz no tiene unidad de trabajo ya que lo que hace es esperar que el us
 
 
 Al leer el archivo de configuración solo le van a importar las propiedades de:
-- TIPO_INTERFAZ= STDIN
-- IP_KERNEL= IP de la maquina donde se encuentre KERNEL
-- PUERTO_KERNEL= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
-- IP_MEMORIA= IP de la maquina donde se encuentre MEMORIA
-- PUERTO_MEMORIA= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- **TIPO_INTERFAZ**= STDIN
+- **IP_KERNEL**= IP de la maquina donde se encuentre KERNEL
+- **PUERTO_KERNEL**= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- **IP_MEMORIA**= IP de la maquina donde se encuentre MEMORIA
+- **PUERTO_MEMORIA**= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
 
 **STDOUT**
 
 Las interfaces STDOUT se conectan a memoria para leer el valor que se encuentra en la o las direcciones físicas pedidas y mostrar el resultado por pantalla. La unica instruccion posible es:
 - IO_STDOUT_WRITE
 
-- TIPO_INTERFAZ= STDOUT
-- IP_KERNEL= IP de la maquina donde se encuentre KERNEL
-- PUERTO_KERNEL= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
-- IP_MEMORIA= IP de la maquina donde se encuentre MEMORIA
-- PUERTO_MEMORIA= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- **TIPO_INTERFAZ**= STDOUT
+- **IP_KERNEL**= IP de la maquina donde se encuentre KERNEL
+- **PUERTO_KERNEL**= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
+- **IP_MEMORIA**= IP de la maquina donde se encuentre MEMORIA
+- **PUERTO_MEMORIA**= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
 
 
 **DialFS**
