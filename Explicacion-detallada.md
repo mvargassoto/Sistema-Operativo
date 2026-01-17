@@ -100,6 +100,8 @@ Al leer el archivo de configuración solo le van a importar las propiedades de:
 Las interfaces STDOUT se conectan a memoria para leer el valor que se encuentra en la o las direcciones físicas pedidas y mostrar el resultado por pantalla. La unica instruccion posible es:
 - IO_STDOUT_WRITE
 
+
+Al leer el archivo de configuración solo le van a importar las propiedades de:
 - **TIPO_INTERFAZ**= STDOUT
 - **IP_KERNEL**= IP de la maquina donde se encuentre KERNEL
 - **PUERTO_KERNEL**= puerto de escucha que tiene el KERNEL, es por donde se le va a notificar que esta libre (u ocupada)
