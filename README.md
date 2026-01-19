@@ -1,8 +1,20 @@
-Simulacion del funcionamiento de un sistema operativo.
-
-Trabajo práctico de la materia Sistemas Operativos de la Universidad Tecnológica Nacional.
-
+# Sistema Operativo
 **Si querés saber en detalle de qué trata ingresá** [acá](https://github.com/mvargassoto/Sistema-Operativo/blob/main/Explicacion-detallada.md)
+
+Este proyecto consiste en desarrollar una solución distribuida para simular un sistema operativo (SO) funcional, permitiendo la planificación de procesos, la administración de memoria y la gestión de un sistema de archivos. El sistema se implementa en lenguaje C sobre una plataforma Linux, utilizando técnicas de programación de sistemas como multihilo, archivos de configuración y logs.
+
+### Arquitectura del Sistema
+El SO se divide en cuatro módulos principales que se comunican entre sí para simular el comportamiento de una computadora real:
+ - **Kernel**: Actúa como el administrador central del sistema. Se encarga de la planificación de procesos utilizando un diagrama de 5 estados (NEW, READY, EXEC, EXIT, BLOCKED) y algoritmos como FIFO, Round Robin (RR) y Virtual Round Robin (VRR). También gestiona los recursos del sistema (WAIT/SIGNAL) y las peticiones de entrada/salida.
+ - **CPU**: Simula el ciclo de instrucción (Fetch, Decode, Execute y Check Interrupt). Incluye registros de propósito general (como AX, BX, PC, entre otros) y una MMU para traducir direcciones lógicas a físicas mediante un esquema de paginación. Para optimizar estas traducciones, implementa una TLB con algoritmos de reemplazo FIFO o LRU.
+ - **Memoria**: Administra el espacio de usuario de forma contigua y bajo un esquema de paginación simple. Responde a peticiones de lectura, escritura y ajuste de tamaño (resize) de los procesos, además de cargar las instrucciones desde archivos de pseudocódigo.
+ - **Interfaz de I/O**: Representa los dispositivos periféricos que se conectan dinámicamente al Kernel. Existen cuatro tipos: Genéricas (solo retardo), STDIN (lectura de teclado), STDOUT (salida por pantalla) y DialFS (sistema de archivos).
+
+### Funcionalidades y Alcance Técnico
+El sistema permite a un programador interactuar con el SO a través de una consola en el Kernel, desde donde puede iniciar scripts, finalizar procesos o listar estados.
+ - Gestión de Procesos: Cada proceso posee un PCB con su identificador (PID), contador de programa y registros. El Kernel coordina la multiprogramación y el desalojo de procesos por interrupciones o fin de quantum.
+ - Sistema de Archivos (DialFS): Implementa una asignación contigua de bloques. Utiliza un archivo de bloques (bloques.dat), un bitmap para gestionar el espacio libre (bitmap.dat) y archivos de metadata para cada archivo creado. Soporta operaciones de creación, eliminación y compactación cuando el espacio libre no es contiguo.
+
 
 ## Instalacion (Linux)
 Primero descargar e instalar [so-commons-library]:
